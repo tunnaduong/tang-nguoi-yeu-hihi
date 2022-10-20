@@ -12,17 +12,8 @@ $(document).ready(function () {
 
 setTimeout(() => {
   var audio = new Audio("sound/sound.mp3");
-
-var resp = audio.play();
-
-if (resp!== undefined) {
-    resp.then(_ => {
-        // autoplay starts!
-    }).catch(error => {
-       //show error
-    });
-}
-}, 200);
+audio.play();
+}, 4000);
 
 function init() {
   $("#title").text(CONFIG.title);
