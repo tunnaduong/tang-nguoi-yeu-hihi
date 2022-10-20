@@ -11,8 +11,18 @@ $(document).ready(function () {
 });
 
 setTimeout(() => {
-  new Audio("sound/sound.mp3").play();
-}, 2000);
+  var audio = new Audio("sound/sound.mp3");
+
+var resp = audio.play();
+
+if (resp!== undefined) {
+    resp.then(_ => {
+        // autoplay starts!
+    }).catch(error => {
+       //show error
+    });
+}
+}, 200);
 
 function init() {
   $("#title").text(CONFIG.title);
