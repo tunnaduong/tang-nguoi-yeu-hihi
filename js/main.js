@@ -10,11 +10,6 @@ $(document).ready(function () {
   }, 600);
 });
 
-setTimeout(() => {
-  var audio = new Audio("sound/sound.mp3");
-audio.play();
-}, 4000);
-
 function init() {
   $("#title").text(CONFIG.title);
   $("#desc").text(CONFIG.desc);
@@ -35,6 +30,8 @@ function firstQuestion() {
     confirmButtonText: CONFIG.btnIntro,
   }).then(function () {
     $(".content").show(200);
+    var audio = new Audio("sound/sound.mp3");
+    audio.play();
   });
 }
 
